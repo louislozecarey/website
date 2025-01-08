@@ -1,0 +1,160 @@
+/* Ensure page layout and styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#paintCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Canvas behind other content */
+}
+
+.name {
+    position: absolute;
+    top: 11px;
+    left: 23px;
+    font-family: system-ui;
+    font-size: 80px;
+    font-weight: 800;
+    color: black;
+    letter-spacing: -3.5px;
+    z-index: 1;
+}
+
+.text-bg {
+    background-color: white;
+    padding: 0.5px 0.5px 0.5px;
+    margin-top: -5px;
+    border-radius: 0px;
+    display: inline-block;
+}
+
+.menu {
+    position: absolute;
+    top: 95px;
+    left: 23px;
+    z-index: 1;
+}
+
+.menu-item {
+    font-family: system-ui;
+    font-size: 80px;
+    font-weight: 800;
+    color: black;
+    margin: 3px 0;
+    padding: 0.1px 0.1px; /* Adjust the top/bottom padding */
+    line-height: 69px; /* Adjust the line height to match the font size */
+    letter-spacing: -2px; /* Adjust the value as needed */
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.menu-item a:visited,
+.menu-item a:hover,
+.menu-item a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+#aboutParagraph {
+    font-family: system-ui;
+    font-size: 30px;
+    font-weight: 800;
+    position: absolute;
+    left: 50.3%;
+    top: 87%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 97%;
+    max-width: 1900px;
+    text-align: left;
+    word-spacing: 0.2em;
+    text-indent: 0px; /* Indent for the entire paragraph */
+    line-height: 1.2; /* Adjust the line height */
+}
+
+#aboutParagraph .about-first-line {
+    display: block;
+    text-indent: 0; /* No indent for the first line */
+}
+
+/* Add margin for all paragraph tags */
+#aboutParagraph p {
+    margin-top: 3px; /* Space above each paragraph */
+    margin-bottom: 3px; /* Space below each paragraph */
+}
+
+
+
+
+
+
+/* New clickable items style */
+.clickable-items {
+    position: absolute;
+    top: 45px; /* Adjusts the vertical position from the top */
+    right: 30.5px; /* Aligns items to the right */
+    z-index: 1; /* Ensure it appears above the canvas */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    gap: 5px; /* Space between items */
+    align-items: flex-end; /* Align items to the right of the column */
+}
+
+/* Style for each clickable item */
+.clickable-items .item {
+    font-family: system-ui; /* Same font family as other text items */
+    font-size: 47px; /* Same font size as menu items */
+    font-weight: 1000; /* Same font weight as menu items */
+    background-color: white; /* Background color for each item */
+    padding: 0.5px 0.5px; /* Individual padding for each item */
+    border-radius: 0px; /* Rounded corners for clickable items */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    letter-spacing: -2px; /* Adjust letter spacing here */
+    width: fit-content; /* Ensures each item only takes up space needed for its content */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .name,
+body.dark-mode .menu-item,
+body.dark-mode #aboutParagraph {
+    color: white;
+}
+
+body.dark-mode .text-bg {
+    background-color: black;
+}
+
+body.dark-mode #toggleButton {
+    background-color: white;
+}
+
+/* Style for the toggle button */
+#toggleButton {
+    position: fixed;
+    bottom: 38.8px; /* Move to bottom right */
+    right: 28.8px;
+    width: 28px;
+    height: 28px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%; /* This creates the circular shape */
+}
